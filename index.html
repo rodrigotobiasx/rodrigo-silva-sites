@@ -1,0 +1,436 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rodrigo Silva Sites | Criação de sites profissionais em Mato Grosso do Sul</title>
+<meta name="description" content="Sites profissionais para clínicas, escritórios e empresas de Mato Grosso do Sul. Você vê a prévia do seu site antes de pagar.">
+<meta property="og:title" content="Rodrigo Silva Sites">
+<meta property="og:description" content="Sites profissionais para empresas de Mato Grosso do Sul. Veja a prévia antes de pagar.">
+<meta property="og:image" content="assets/hero-poster.jpg">
+<meta name="theme-color" content="#03060f">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='14' fill='%2303060f'/><text x='50%' y='58%' font-family='Arial' font-weight='700' font-size='30' fill='%2322d3ee' text-anchor='middle' dominant-baseline='middle'>RS</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link rel="preload" as="image" href="assets/hero-poster.jpg">
+<style>
+:root{
+  --bg:#03060f;--bg2:#070d1d;--card:rgba(18,30,62,.45);--line:rgba(140,180,255,.16);
+  --blue:#3b82f6;--cyan:#22d3ee;--txt:#e8eefc;--mut:#9aa8c7;--wa:#25d366;
+  --r:18px;--max:1140px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--txt);font-family:Sora,system-ui,sans-serif;line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+img,video{display:block}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 6vw}
+.grad{background:linear-gradient(90deg,var(--blue),var(--cyan));-webkit-background-clip:text;background-clip:text;color:transparent}
+
+/* nav */
+header{position:fixed;top:0;left:0;right:0;z-index:50;transition:background .3s,border-color .3s,backdrop-filter .3s;border-bottom:1px solid transparent}
+header.solid{background:rgba(3,6,15,.78);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-color:var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:74px;max-width:none;padding:0 7vw}
+.logo{font-weight:700;font-size:17px;text-decoration:none;letter-spacing:.2px}
+.logo span{color:var(--cyan)}
+.links{display:flex;align-items:center;gap:30px}
+.links a{color:var(--mut);text-decoration:none;font-size:14px;transition:color .2s}
+.links a:hover{color:var(--txt)}
+.btn{display:inline-flex;align-items:center;gap:10px;border-radius:999px;font-weight:600;text-decoration:none;transition:transform .2s,box-shadow .2s,background .2s;cursor:pointer;border:0;font-family:inherit}
+.btn:hover{transform:translateY(-2px)}
+.btn-light{background:var(--txt);color:var(--bg);padding:17px 32px;font-size:16px}
+.btn-light:hover{box-shadow:0 10px 40px rgba(34,211,238,.25)}
+.btn-ghost{border:1px solid var(--line);color:var(--txt);padding:16px 28px;font-size:15px}
+.btn-ghost:hover{border-color:rgba(34,211,238,.5)}
+.btn-sm{padding:10px 20px;font-size:14px;background:rgba(232,238,252,.08);border:1px solid var(--line);color:var(--txt)}
+.btn svg{width:20px;height:20px;flex:none}
+
+/* hero */
+.hero{position:relative;height:100vh;height:100svh;min-height:620px;overflow:hidden;display:flex;align-items:center}
+.hero video,.hero .poster{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% center}
+.hero .poster{z-index:0}
+.hero video{z-index:1;opacity:0;transition:opacity 1.2s}
+.hero video.ready{opacity:1}
+.shade{position:absolute;inset:0;z-index:2;background:
+  linear-gradient(90deg,rgba(3,6,15,.95) 0%,rgba(3,6,15,.8) 35%,rgba(3,6,15,.35) 52%,rgba(3,6,15,0) 72%),
+  linear-gradient(0deg,var(--bg) 0%,transparent 28%)}
+.hero .wrap{max-width:none;margin:0;padding:0 7vw;width:100%}
+.hero .copy{position:relative;z-index:3;max-width:580px}
+.hero h1{font-size:clamp(38px,4.6vw,66px)}
+.tag{display:inline-flex;align-items:center;gap:8px;font-size:12px;letter-spacing:2px;text-transform:uppercase;color:var(--cyan);border:1px solid rgba(34,211,238,.35);padding:7px 15px;border-radius:999px;margin-bottom:26px}
+.tag i{width:7px;height:7px;border-radius:50%;background:var(--cyan);box-shadow:0 0 12px var(--cyan);animation:blink 2s infinite}
+@keyframes blink{50%{opacity:.3}}
+h1{font-size:clamp(38px,5.6vw,74px);line-height:1.04;font-weight:700;letter-spacing:-1px}
+h1 .w{display:inline-block}
+.hero p{color:#b4c0dc;font-size:clamp(16px,1.4vw,18px);margin:26px 0 38px;max-width:540px}
+.actions{display:flex;flex-wrap:wrap;gap:14px}
+.in{opacity:0;transform:translateY(36px);animation:up .9s cubic-bezier(.2,.7,.2,1) forwards}
+@keyframes up{to{opacity:1;transform:none}}
+.scrollcue{position:absolute;z-index:3;bottom:30px;left:50%;transform:translateX(-50%);width:26px;height:42px;border:1.5px solid rgba(232,238,252,.35);border-radius:20px}
+.scrollcue::after{content:"";position:absolute;left:50%;top:8px;width:4px;height:8px;margin-left:-2px;border-radius:2px;background:var(--txt);animation:wheel 1.8s infinite}
+@keyframes wheel{0%{opacity:1;transform:none}100%{opacity:0;transform:translateY(14px)}}
+
+/* sections */
+section{padding:120px 0;position:relative}
+.eyebrow{font-size:12px;letter-spacing:2.5px;text-transform:uppercase;color:var(--cyan);margin-bottom:16px;display:block}
+h2{font-size:clamp(30px,3.8vw,48px);line-height:1.12;font-weight:700;letter-spacing:-.5px;max-width:760px}
+.lead{color:var(--mut);font-size:17px;max-width:600px;margin-top:18px}
+.head{margin-bottom:60px}
+
+/* audience strip */
+.strip{padding:40px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--bg2)}
+.strip .wrap{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:20px}
+.strip small{color:var(--mut);font-size:13px;letter-spacing:1px;text-transform:uppercase}
+.pills{display:flex;flex-wrap:wrap;gap:10px}
+.pill{border:1px solid var(--line);border-radius:999px;padding:9px 18px;font-size:14px;color:#c9d4ee;background:rgba(255,255,255,.02)}
+
+/* problem */
+.split{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center}
+.stat{border:1px solid var(--line);border-radius:var(--r);padding:34px;background:var(--card)}
+.stat+.stat{margin-top:16px}
+.stat b{display:block;font-size:20px;margin-bottom:6px}
+.stat p{color:var(--mut);font-size:15px}
+.stat .ic{width:44px;height:44px;border-radius:12px;display:grid;place-items:center;background:rgba(59,130,246,.14);color:var(--cyan);margin-bottom:18px}
+.ic svg{width:22px;height:22px}
+
+/* services */
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.card{position:relative;border:1px solid var(--line);border-radius:var(--r);padding:36px 32px;background:var(--card);overflow:hidden;transition:transform .35s,border-color .35s}
+.card::before{content:"";position:absolute;inset:-1px;border-radius:inherit;background:radial-gradient(400px circle at var(--mx,50%) var(--my,0%),rgba(34,211,238,.14),transparent 45%);opacity:0;transition:opacity .35s;pointer-events:none}
+.card:hover{transform:translateY(-6px);border-color:rgba(34,211,238,.35)}
+.card:hover::before{opacity:1}
+.card h3{font-size:21px;margin:20px 0 10px}
+.card p{color:var(--mut);font-size:15px}
+.card ul{list-style:none;margin-top:22px;display:grid;gap:10px}
+.card li{font-size:14px;color:#c9d4ee;padding-left:24px;position:relative}
+.card li::before{content:"";position:absolute;left:0;top:7px;width:12px;height:7px;border-left:2px solid var(--cyan);border-bottom:2px solid var(--cyan);transform:rotate(-45deg)}
+.card.feat{border-color:rgba(59,130,246,.5)}
+.badge{position:absolute;top:22px;right:22px;font-size:11px;letter-spacing:1px;text-transform:uppercase;background:rgba(59,130,246,.18);color:#9cc3ff;padding:5px 11px;border-radius:999px}
+
+/* steps */
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;counter-reset:s;position:relative}
+.step{padding:30px 26px;border-radius:var(--r);border:1px solid var(--line);background:rgba(255,255,255,.015)}
+.step span{display:inline-grid;place-items:center;width:42px;height:42px;border-radius:50%;border:1px solid rgba(34,211,238,.45);color:var(--cyan);font-weight:600;font-size:15px;margin-bottom:22px}
+.step b{display:block;font-size:18px;margin-bottom:8px}
+.step p{color:var(--mut);font-size:14.5px}
+
+/* transparency */
+.trans{background:var(--bg2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.checks{display:grid;grid-template-columns:repeat(2,1fr);gap:16px 40px}
+.check{display:flex;gap:16px;align-items:flex-start;padding:22px 0;border-bottom:1px solid var(--line)}
+.check .ic{width:38px;height:38px;border-radius:10px;display:grid;place-items:center;background:rgba(34,211,238,.1);color:var(--cyan);flex:none}
+.check b{display:block;font-size:16.5px;margin-bottom:3px}
+.check p{color:var(--mut);font-size:14.5px}
+
+/* faq */
+.faq{max-width:820px}
+details{border-bottom:1px solid var(--line)}
+summary{list-style:none;cursor:pointer;padding:26px 44px 26px 0;font-size:17.5px;font-weight:600;position:relative}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"";position:absolute;right:6px;top:50%;width:12px;height:12px;margin-top:-8px;border-right:2px solid var(--cyan);border-bottom:2px solid var(--cyan);transform:rotate(45deg);transition:transform .3s}
+details[open] summary::after{transform:rotate(-135deg);margin-top:-2px}
+details p{color:var(--mut);padding:0 40px 26px 0;font-size:15.5px}
+
+/* final cta */
+.final{text-align:center;overflow:hidden}
+.final .box{position:relative;border:1px solid var(--line);border-radius:28px;padding:90px 6vw;background:radial-gradient(ellipse at 50% 0%,rgba(59,130,246,.22),transparent 65%),var(--bg2);overflow:hidden}
+.final h2{margin:0 auto}
+.final .lead{margin:18px auto 40px}
+.final .actions{justify-content:center}
+
+footer{padding:50px 0 60px;color:var(--mut);font-size:14px}
+footer .wrap{display:flex;flex-wrap:wrap;gap:20px;justify-content:space-between;align-items:center;border-top:1px solid var(--line);padding-top:40px}
+footer a{text-decoration:none}footer a:hover{color:var(--txt)}
+
+/* floating whatsapp */
+.wa{position:fixed;right:22px;bottom:22px;z-index:60;width:60px;height:60px;border-radius:50%;background:var(--wa);display:grid;place-items:center;box-shadow:0 10px 30px rgba(37,211,102,.35);transform:scale(0);transition:transform .4s cubic-bezier(.3,1.4,.5,1)}
+.wa.show{transform:scale(1)}
+.wa svg{width:32px;height:32px;fill:#fff}
+.wa::after{content:"";position:absolute;inset:0;border-radius:50%;border:2px solid var(--wa);animation:ring 2.4s infinite}
+@keyframes ring{0%{transform:scale(1);opacity:.7}100%{transform:scale(1.6);opacity:0}}
+
+/* reveal */
+.rv{opacity:0;transform:translateY(40px);transition:opacity .9s cubic-bezier(.2,.7,.2,1),transform .9s cubic-bezier(.2,.7,.2,1)}
+.rv.on{opacity:1;transform:none}
+
+@media (max-width:960px){
+  .split{grid-template-columns:1fr;gap:40px}
+  .cards{grid-template-columns:1fr}
+  .steps{grid-template-columns:1fr 1fr}
+  .checks{grid-template-columns:1fr}
+}
+@media (max-width:700px){
+  .links a:not(.btn){display:none}
+  section{padding:84px 0}
+  .hero{align-items:flex-end;padding-bottom:13vh}
+  .hero video,.hero .poster{object-position:76% 30%}
+  .shade{background:linear-gradient(0deg,rgba(3,6,15,.97) 38%,rgba(3,6,15,.45) 72%,rgba(3,6,15,.25) 100%)}
+  .scrollcue{display:none}
+  .steps{grid-template-columns:1fr}
+  .btn-light,.btn-ghost{width:100%;justify-content:center}
+  .final .box{padding:64px 22px}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  .in,.rv{opacity:1;transform:none}
+}
+</style>
+</head>
+<body>
+
+<header id="top">
+  <div class="wrap nav">
+    <a class="logo" href="#">Rodrigo Silva <span>Sites</span></a>
+    <nav class="links">
+      <a href="#servicos">Serviços</a>
+      <a href="#como-funciona">Como funciona</a>
+      <a href="#duvidas">Dúvidas</a>
+      <a class="btn btn-sm" data-wa="Olá! Vim pelo site e quero saber mais." href="#">Fale comigo</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<!-- HERO -->
+<div class="hero">
+  <img class="poster" src="assets/hero-poster.jpg" alt="" aria-hidden="true">
+  <video id="bg" muted loop playsinline preload="auto" poster="assets/hero-poster.jpg" aria-hidden="true">
+    <source src="assets/hero.webm" type="video/webm">
+    <source src="assets/hero.mp4" type="video/mp4">
+  </video>
+  <div class="shade"></div>
+  <div class="wrap">
+    <div class="copy">
+      <div class="tag in" style="animation-delay:.2s"><i></i>Criação de sites em MS</div>
+      <h1>
+        <span class="w in" style="animation-delay:.45s">Seu</span>
+        <span class="w in" style="animation-delay:.58s">negócio</span>
+        <span class="w in" style="animation-delay:.71s">merece</span>
+        <span class="w in" style="animation-delay:.84s">um</span>
+        <span class="w in grad" style="animation-delay:.97s">site</span>
+        <span class="w in grad" style="animation-delay:1.1s">que&nbsp;vende</span>
+      </h1>
+      <p class="in" style="animation-delay:1.35s">Sites modernos para clínicas, escritórios e empresas de Mato Grosso do Sul. Você vê a prévia do seu site antes de decidir.</p>
+      <div class="actions in" style="animation-delay:1.6s">
+        <a class="btn btn-light" data-wa="Olá! Quero ver uma prévia do site para a minha empresa." href="#">Quero ver minha prévia
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a class="btn btn-ghost" href="#como-funciona">Como funciona</a>
+      </div>
+    </div>
+  </div>
+  <a class="scrollcue" href="#para-quem" aria-label="Rolar para baixo"></a>
+</div>
+
+<!-- AUDIENCE -->
+<div class="strip" id="para-quem">
+  <div class="wrap">
+    <small>Feito para</small>
+    <div class="pills">
+      <span class="pill">Clínicas odontológicas</span>
+      <span class="pill">Escritórios de advocacia</span>
+      <span class="pill">Clínicas e consultórios</span>
+      <span class="pill">Comércio local</span>
+      <span class="pill">Prestadores de serviço</span>
+    </div>
+  </div>
+</div>
+
+<!-- PROBLEM -->
+<section>
+  <div class="wrap split">
+    <div class="rv">
+      <span class="eyebrow">Por que ter um site</span>
+      <h2>Seu cliente pesquisa no Google <span class="grad">antes de te chamar</span></h2>
+      <p class="lead">Quem não encontra você, encontra o concorrente. E quem encontra um site antigo ou lento desconfia antes mesmo de mandar mensagem.</p>
+    </div>
+    <div>
+      <div class="stat rv">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg></div>
+        <b>Ser encontrado</b>
+        <p>Site e perfil no Google configurados para aparecer quando alguém da sua cidade procura pelo seu serviço.</p>
+      </div>
+      <div class="stat rv">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3l7 4v5c0 4.5-3 8-7 9-4-1-7-4.5-7-9V7z"/><path d="m9 12 2 2 4-4"/></svg></div>
+        <b>Passar confiança</b>
+        <p>Um site profissional mostra que sua empresa é séria e facilita a decisão de quem ainda está comparando.</p>
+      </div>
+      <div class="stat rv">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12a9 9 0 0 1-13.5 7.8L3 21l1.2-4.5A9 9 0 1 1 21 12z"/></svg></div>
+        <b>Virar conversa</b>
+        <p>Cada página leva para o seu WhatsApp. O visitante sai do Google e cai direto na sua conversa.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="servicos" style="padding-top:40px">
+  <div class="wrap">
+    <div class="head rv">
+      <span class="eyebrow">Serviços</span>
+      <h2>Tudo o que sua empresa precisa para <span class="grad">aparecer na internet</span></h2>
+    </div>
+    <div class="cards">
+      <article class="card feat rv">
+        <span class="badge">Principal</span>
+        <div class="ic stat-ic" style="width:48px;height:48px;border-radius:12px;display:grid;place-items:center;background:rgba(59,130,246,.16);color:var(--cyan)"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="13" rx="2"/><path d="M8 21h8M12 17v4"/></svg></div>
+        <h3>Site profissional</h3>
+        <p>Um site moderno, rápido e pensado para transformar visitante em cliente.</p>
+        <ul>
+          <li>Design exclusivo para a sua marca</li>
+          <li>Funciona perfeito no celular</li>
+          <li>Botão direto para o WhatsApp</li>
+          <li>Prévia antes de você decidir</li>
+        </ul>
+      </article>
+      <article class="card rv">
+        <div class="ic" style="width:48px;height:48px;border-radius:12px;display:grid;place-items:center;background:rgba(59,130,246,.16);color:var(--cyan)"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg></div>
+        <h3>Google Meu Negócio</h3>
+        <p>Sua empresa no mapa, com fotos, horários e avaliações, para quem procura perto de você.</p>
+        <ul>
+          <li>Criação ou otimização do perfil</li>
+          <li>Fotos, horários e serviços</li>
+          <li>Integração com o site</li>
+        </ul>
+      </article>
+      <article class="card rv">
+        <div class="ic" style="width:48px;height:48px;border-radius:12px;display:grid;place-items:center;background:rgba(59,130,246,.16);color:var(--cyan)"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".6" fill="currentColor"/></svg></div>
+        <h3>Social media</h3>
+        <p>Presença constante nas redes, com conteúdo que reforça sua autoridade e leva para o site.</p>
+        <ul>
+          <li>Posts e vídeos com padrão profissional</li>
+          <li>Identidade visual consistente</li>
+          <li>Acompanhamento mensal</li>
+        </ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- STEPS -->
+<section id="como-funciona" style="padding-top:40px">
+  <div class="wrap">
+    <div class="head rv">
+      <span class="eyebrow">Como funciona</span>
+      <h2>Do primeiro contato ao site no ar, <span class="grad">sem complicação</span></h2>
+    </div>
+    <div class="steps">
+      <div class="step rv"><span>1</span><b>Conversa</b><p>Você me conta sobre a sua empresa e o que precisa, pelo WhatsApp.</p></div>
+      <div class="step rv"><span>2</span><b>Prévia</b><p>Eu crio e te mostro como ficaria o seu site, antes de você decidir.</p></div>
+      <div class="step rv"><span>3</span><b>Ajustes</b><p>Textos, fotos e cores do jeito da sua empresa, até você aprovar.</p></div>
+      <div class="step rv"><span>4</span><b>No ar</b><p>Site publicado, com domínio próprio e pronto para receber clientes.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- TRANSPARENCY -->
+<section class="trans">
+  <div class="wrap">
+    <div class="head rv">
+      <span class="eyebrow">Transparência</span>
+      <h2>O que você recebe, <span class="grad">sem letra miúda</span></h2>
+      <p class="lead">Você sabe exatamente o que está contratando antes de pagar qualquer coisa.</p>
+    </div>
+    <div class="checks">
+      <div class="check rv"><div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg></div><div><b>Prévia antes de decidir</b><p>Você vê o seu site pronto antes de fechar.</p></div></div>
+      <div class="check rv"><div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 7h18M3 12h18M3 17h12"/></svg></div><div><b>Proposta por escrito</b><p>Valor, prazo e o que está incluso, tudo combinado antes de começar.</p></div></div>
+      <div class="check rv"><div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg></div><div><b>O domínio é seu</b><p>O endereço do site fica registrado no nome da sua empresa.</p></div></div>
+      <div class="check rv"><div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12a9 9 0 0 1-13.5 7.8L3 21l1.2-4.5A9 9 0 1 1 21 12z"/></svg></div><div><b>Atendimento direto</b><p>Você fala comigo, não com um robô ou uma central.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="duvidas">
+  <div class="wrap">
+    <div class="head rv">
+      <span class="eyebrow">Dúvidas</span>
+      <h2>Perguntas frequentes</h2>
+    </div>
+    <div class="faq rv">
+      <details><summary>Preciso pagar para ver a prévia?</summary><p>Não. A prévia serve justamente para você ver como ficaria o seu site antes de decidir.</p></details>
+      <details><summary>Em quanto tempo o site fica pronto?</summary><p>Depende do tamanho do site e de quando você me envia as informações e fotos. O prazo fica definido por escrito na proposta, antes de começar.</p></details>
+      <details><summary>Eu consigo atualizar o site depois?</summary><p>Sim. Você pode pedir alterações sempre que precisar, e os detalhes de como funcionam as atualizações ficam combinados na proposta.</p></details>
+      <details><summary>Atende só em Campo Grande?</summary><p>Atendo empresas de todo o Mato Grosso do Sul. Todo o processo é feito online, pelo WhatsApp.</p></details>
+      <details><summary>Já tenho um site. Vale a pena refazer?</summary><p>Se ele é lento, difícil de usar no celular ou não traz contatos, sim. Posso analisar o seu site atual e te mostrar o que mudaria.</p></details>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="final" style="padding-top:20px">
+  <div class="wrap">
+    <div class="box rv">
+      <span class="eyebrow">Vamos começar</span>
+      <h2>Veja como ficaria o <span class="grad">site da sua empresa</span></h2>
+      <p class="lead">Me chama no WhatsApp e eu te mostro uma prévia. Sem compromisso.</p>
+      <div class="actions">
+        <a class="btn btn-light" data-wa="Olá! Quero ver uma prévia do site para a minha empresa." href="#">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .1-3.3-.8-2.8-1.1-4.5-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.8s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .6l-.4.6-.4.5c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.4 2.4 1.5.3.1.5.1.7-.1l.9-1.1c.2-.3.4-.2.7-.1l2 1c.3.1.5.2.6.3.1.2.1.8-.1 1.4z"/></svg>
+          Falar no WhatsApp</a>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© <span id="yr"></span> Rodrigo Silva Sites · Mato Grosso do Sul</span>
+    <span><a href="https://instagram.com/" target="_blank" rel="noopener">Instagram</a> · <a href="#" data-wa="Olá! Vim pelo site.">WhatsApp</a></span>
+  </div>
+</footer>
+
+<a class="wa" id="wa" data-wa="Olá! Vim pelo site e quero saber mais." href="#" aria-label="Falar no WhatsApp">
+  <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .1-3.3-.8-2.8-1.1-4.5-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.8s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .6l-.4.6-.4.5c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.4 2.4 1.5.3.1.5.1.7-.1l.9-1.1c.2-.3.4-.2.7-.1l2 1c.3.1.5.2.6.3.1.2.1.8-.1 1.4z"/></svg>
+</a>
+
+<script>
+/* ===== EDITE AQUI: seu número com DDI 55 + DDD, só números ===== */
+const WHATSAPP = "5567999999999";
+
+document.querySelectorAll("[data-wa]").forEach(a => {
+  a.href = "https://wa.me/" + WHATSAPP + "?text=" + encodeURIComponent(a.dataset.wa);
+  a.target = "_blank"; a.rel = "noopener";
+});
+document.getElementById("yr").textContent = new Date().getFullYear();
+
+/* vídeo de fundo: só toca se o navegador permitir e o usuário não economiza dados */
+const v = document.getElementById("bg");
+const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+const saveData = navigator.connection && navigator.connection.saveData;
+if (!reduce && !saveData) {
+  v.addEventListener("canplay", () => v.classList.add("ready"), { once: true });
+  const p = v.play(); if (p) p.catch(() => {});
+} else { v.remove(); }
+
+/* header sólido e botão flutuante ao rolar */
+const header = document.getElementById("top"), wa = document.getElementById("wa");
+const onScroll = () => {
+  const y = scrollY;
+  header.classList.toggle("solid", y > 40);
+  wa.classList.toggle("show", y > innerHeight * .6);
+  if (v.isConnected) { y > innerHeight ? v.pause() : v.paused && v.play().catch(()=>{}); }
+};
+addEventListener("scroll", onScroll, { passive: true }); onScroll();
+
+/* animação de entrada das seções */
+const io = new IntersectionObserver(es => es.forEach(e => {
+  if (e.isIntersecting) {
+    const sibs = [...e.target.parentElement.querySelectorAll(":scope > .rv")];
+    e.target.style.transitionDelay = (Math.max(0, sibs.indexOf(e.target)) * 0.12) + "s";
+    e.target.classList.add("on"); io.unobserve(e.target);
+  }
+}), { threshold: .15, rootMargin: "0px 0px -40px 0px" });
+document.querySelectorAll(".rv").forEach(el => io.observe(el));
+
+/* brilho seguindo o mouse nos cards */
+document.querySelectorAll(".card").forEach(c => c.addEventListener("pointermove", e => {
+  const r = c.getBoundingClientRect();
+  c.style.setProperty("--mx", (e.clientX - r.left) + "px");
+  c.style.setProperty("--my", (e.clientY - r.top) + "px");
+}));
+</script>
+</body>
+</html>
